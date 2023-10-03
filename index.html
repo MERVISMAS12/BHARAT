@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <center>
+    <h2 class="title">Temperature Converter</h2>
+    <img class="responsive" src="image.webp" alt="thermometer">
+    <div class="main_box">
+        <span class="box">
+            <label for="celcius">Celcius : </label>
+            <input id="celcius" name="celcius" value="25" type="number" onchange="to_fahrenheit()" > ℃
+        </span>
+        <span class="box">
+            <label for="fahrenheit">Fahrenheit : </label>
+            <input id="fahrenheit" name="fahrenheit" value="77" type="number" onchange="to_celcius()" > ℉
+        </span>
+        <table>
+            <tbody>
+                <tr>
+                    <th> </th>
+                    <th>from Celsius</th>
+                    <th>to Celsius</th>
+                </tr>
+                <tr>
+                    <th>Fahrenheit</th>
+                    <td>x °C ≘ (x × 9/5 + 32) °F</td>
+                    <td>x °F ≘ (x − 32) × 5/9 °C</td>
+                </tr>
+            </tbody>
+        </table>
+    </center>    
+    <br>
+        <div class="section">
+            <div>
+                
+                <article>
+                    
+                    <p>
+                        <h4>Convert Celsius (°C) to Fahrenheit (°F)</h4>
+                         <span id="c_solve">25</span>°C / 5 = <span id="cs_divide1">5</span> <br> <span id="cs_divide2">5</span> × 9 = <span id="cs_multi1">45</span>  <br> <span id="cs_multi2">45</span> + 32 = <span id="cs_add">77</span>° F
+                    </p>
+                    <p>
+                        <h4>Convert Fahrenheit (°F) to Celsius (°C) </h4>
+                         <span id="f_solve">98.6</span>°F - 32 = <span id="fs_sub1">66.6</span> <br> <span id="fs_sub2">66.6</span> × 5 = <span id="fs_multi1">333</span><br> <span id="fs_multi2">333</span> / 9 = <span id="fs_divide">37</span>° C
+                    </p>
+                    <h4>Fun Facts!</h4>
+                    <ul class="shell">
+                        <li><p>An interesting temperature related fact is that Fahrenheit and Celsius are equal at -40 degrees.</p></li>
+                        <li><p>Recent increases in the Earth’s temperature have been linked to human activity such as the burning of fossil fuels. Global warming has become an important issue for governments around the world and a number of organizations have been created to help deal with climate change.</p></li>
+                        <li><p>The hottest temperature ever recorded on Earth is 57.8 °C (136&nbsp;°F), recorded in Al 'Aziziyah, Libya on September 13, 1922.</p></li>
+                        <li><p>The coldest temperature ever recorded on Earth is -89.2&nbsp;°C (-128.6&nbsp;°F), recorded at Vostok Station, Antarctica on July 21, 1983.</p></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="container">
+                <h2>Typical Temperatures</h2>
+                <h5>Only <b>bold</b> are exactly the same</h5>
+                <table>
+                    <tr>
+                        <td></td>
+                        <th>°C</th>
+                        <th>°F</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ff0000">&nbsp;</td>
+                        <td>220</td>
+                        <td>430</td>
+                        <td>Hot Oven</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#f62734">&nbsp;</td>
+                        <td>180</td>
+                        <td>360</td>
+                        <td>Moderate Oven</td>
+                    </tr>
+                    
+                    <tr>
+                        <td bgcolor="#e4434d">&nbsp;</td>
+                        <td>100</td>
+                        <td>212</td>
+                        <td>Water boils</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#cf6269">&nbsp;</td>
+                        <td>40</td>
+                        <td>104</td>
+                        <td>Hot Bath</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#bd7e82">&nbsp;</td>
+                        <td>37</td>
+                        <td>98.6</td>
+                        <td>Body temperature</td>
+                    </tr>
+                    
+                    <tr>
+                        <td bgcolor="#a89d9d">&nbsp;</td>
+                        <td>30</td>
+                        <td>86</td>
+                        <td>Beach weather</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#a4a3b0">&nbsp;</td>
+                        <td>21</td>
+                        <td>70</td>
+                        <td>Room temperature</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#a3b8c3">&nbsp;</td>
+                        <td>10</td>
+                        <td>50</td>
+                        <td>Cool Day</td>
+                    </tr>
+                    
+                    <tr>
+                        <td bgcolor="#a3c5d7">&nbsp;</td>
+                        <td>0</td>
+                        <td>32</td>
+                        <td>Freezing point of water</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#a3cfe7">&nbsp;</td>
+                        <td>-18</td>
+                        <td>0</td>
+                        <td>Very Cold Day</td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#a2daf8">&nbsp;</td>
+                        <td>-40</td>
+                        <td>-40</td>
+                        <td>Extremely Cold Day<br>
+                            (and the same number!)</td>
+                    </tr>
+                    
+                </table> 
+            </div>
+        </div>
+    </div>
+    
+    
+    <script>
+        function to_fahrenheit(){
+            celc = document.getElementById('celcius');
+            fahr = document.getElementById('fahrenheit');
+
+            fahr.value = (celc.value * 9/5) + 32;
+            console.log(fahr.value)
+
+            document.getElementById('c_solve').innerHTML = celc.value;
+            document.getElementById('cs_divide1').innerHTML = celc.value / 5.0;
+            document.getElementById('cs_divide2').innerHTML = celc.value / 5.0;
+            document.getElementById('cs_multi1').innerHTML = (celc.value / 5.0) * 9;
+            document.getElementById('cs_multi2').innerHTML = (celc.value / 5.0) * 9;
+            document.getElementById('cs_add').innerHTML = ((celc.value / 5.0) * 9) + 32 ;
+        }
+        function to_celcius(){
+            celc = document.getElementById('celcius');
+            fahr = document.getElementById('fahrenheit');
+            
+            celc.value = (fahr.value - 32) * 5/9;
+            console.log(celc.value)
+
+            document.getElementById('f_solve').innerHTML = fahr.value;
+            document.getElementById('fs_sub1').innerHTML = fahr.value - 32;
+            document.getElementById('fs_sub2').innerHTML = fahr.value - 32;
+            document.getElementById('fs_multi1').innerHTML = (fahr.value - 32) * 5;
+            document.getElementById('fs_multi2').innerHTML = (fahr.value - 32) * 5;
+            document.getElementById('fs_divide').innerHTML = ((fahr.value - 32) * 5) / 9.0;
+        }
+    </script>
+    
+</body>
+</html>
